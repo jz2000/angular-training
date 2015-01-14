@@ -1,0 +1,7 @@
+<div class="chat-messages">
+    <div class="row message clearfix" ng-repeat="message in messages">
+        <div class="col-xs-2 username">{{message.user.userName}} - ({{message.user.userId}})</div>
+        <div class="col-xs-7 text">{{message.messageText}}</div>
+        <div class="col-xs-3 time">{{message.messageDate | date: 'shortTime'}}</div>
+    </div>
+</div>
