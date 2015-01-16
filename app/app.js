@@ -10,8 +10,7 @@
         $routeProvider.otherwise({ redirectTo: "/home" });
 
         $routeProvider.when('/home', {
-            templateUrl: 'templates/phone/chat.html',
-            controller: 'HomeController'
+            templateUrl: 'templates/home.html'
         });
 
         $routeProvider.when('/users', {
