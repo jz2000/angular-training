@@ -5,7 +5,7 @@
         
     module.controller('MessagesController', function($scope, DataModelService) {
             $scope.messageList = 'List of Messages';
-            $scope.messages = DataModelService.getMessages();//module.dataMessages;
+            $scope.messages = DataModelService.getMessages();
         }
     );
     
@@ -14,6 +14,7 @@
             directive.restrict = 'E'; 
             directive.templateUrl = 'components/message-list/message-list-template.html';
             directive.controller = 'MessagesController';
+            directive.controllerAs = 'messagelistCtrl';
             return directive;            
     }]);
     

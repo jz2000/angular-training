@@ -14,6 +14,7 @@
             directive.restrict = 'E'; 
             directive.templateUrl = 'components/user-list/user-list-template.html';
             directive.controller = 'UsersController';
+            directive.controllerAs = 'userlistCtrl';
             return directive;            
     }]);
     
