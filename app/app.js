@@ -2,8 +2,8 @@
     "use strict";
     angular.module("app", [
         "ngRoute", 
-        "chatApp.controllers",
-        "chatApp.directives"
+        "chatApp.UserList",
+        "chatApp.MessageList"
     ]);
 
     angular.module("app").config(function ($routeProvider) {

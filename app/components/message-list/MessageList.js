@@ -1,7 +1,7 @@
 (function () {
     "use strict";
 
-    var module = angular.module("chatApp.controllers", ['ngRoute']);
+    var module = angular.module("chatApp.MessageList", []);
     
     module.dataUsers = generateUsers();
     module.dataMessages = generateMessages();
@@ -46,9 +46,19 @@
             $scope.users = module.dataUsers;
         }
     ]);
+    
     module.controller('MessagesController', ['$scope', function($scope) {
             $scope.messageList = 'List of Messages';
             $scope.messages = module.dataMessages;
         }
     ]);
+    
+    module.directive('messagelist', [function() {
+            var directive = {};
+            directive.restrict = 'E'; 
+            directive.templateUrl = 'components/message-list/message-list-template.html';
+            directive.controller = 'MessagesController';
+            return directive;            
+    }]);
+    
 })();
