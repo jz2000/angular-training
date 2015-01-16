@@ -2,6 +2,7 @@
     "use strict";
     angular.module("app", [
         "ngRoute", 
+        "chatApp.DataModel",
         "chatApp.UserList",
         "chatApp.MessageList"
     ]);
