@@ -4,6 +4,7 @@
         "ngRoute", 
         "chatApp.DataModel",
         "chatApp.UserList",
+        "chatApp.MessageSender",
         "chatApp.MessageList"
     ]);
 

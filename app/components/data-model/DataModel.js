@@ -20,7 +20,7 @@
             var user = users[i];
             for (var j = 0; j < 10; j++) {
                 messages.push({
-                    messageId: i * 100 + j,
+                    messageId: messages.length,
                     user: user,
                     messageText: 'Message #' + j + ' from User #' + i,
                     messageDate : new Date()
@@ -39,6 +39,17 @@
         };
         this.getMessages = function() {
             return self.messages;
+        };
+        this._getNextMessageId = function() {
+            return this.messages.length;
+        };
+        this.postMessage = function(user, messageText) {
+            self.messages.push({
+                messageId: self._getNextMessageId(),
+                user: user,
+                messageText: messageText,
+                messageDate : new Date()
+            });
         };
     });
     
