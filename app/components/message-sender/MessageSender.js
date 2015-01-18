@@ -4,13 +4,12 @@
     var module = angular.module('chatApp.MessageSender', ['chatApp.DataModel']);
         
     module.controller('MessageSenderController', function($scope, DataModelService) {
+            $scope.isLoggedIn = function() {
+                return DataModelService.isLoggedIn();
+            };
             $scope.messageText = '';
             $scope.postMessage = function() {
-                var activeUser = {
-                    userId: -100,
-                    userName: 'Active User'
-                };
-                DataModelService.postMessage(activeUser, $scope.messageText);
+                DataModelService.postMessage($scope.messageText);
                 $scope.messageText = '';
             };
         }

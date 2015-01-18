@@ -32,8 +32,22 @@
     
     module.service('DataModelService', function() {
         var self = this;
+        this.activeUser = null;
         this.users = generateUsers();
         this.messages = generateMessages(this.users);
+        this.isLoggedIn = function() {
+            return (self.activeUser !== null);
+        };
+        this.getActiveUser = function() {
+            return self.activeUser;
+        };
+        this.setActiveUser = function(userName, password) {
+            self.activeUser = {
+                userId: self.users.length,
+                userName: userName
+            };
+            self.users.push(self.activeUser);
+        };
         this.getUsers = function() {
             return self.users;
         };
@@ -43,10 +57,10 @@
         this._getNextMessageId = function() {
             return this.messages.length;
         };
-        this.postMessage = function(user, messageText) {
+        this.postMessage = function(messageText) {
             self.messages.push({
                 messageId: self._getNextMessageId(),
-                user: user,
+                user: self.activeUser,
                 messageText: messageText,
                 messageDate : new Date()
             });
