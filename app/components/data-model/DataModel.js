@@ -22,7 +22,7 @@
                 messages.push({
                     messageId: messages.length,
                     user: user,
-                    messageText: 'Message #' + j + ' from User #' + i,
+                    messageText: 'Message #' + j + ' from User #' + i + ':smile: :cat:',
                     messageDate : new Date()
                 });
             }
