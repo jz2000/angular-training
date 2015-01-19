@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-    var module = angular.module('chatApp.MessageList', ['chatApp.DataModel']);
+    var module = angular.module('chatApp.MessageList', ['chatApp.DataModel', 'dbaq.emoji', 'ngSanitize']);
         
     module.controller('MessagesController', function($scope, DataModelService) {
             $scope.messageList = 'List of Messages';

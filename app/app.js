@@ -3,7 +3,9 @@
     angular.module("app", [
         "ngRoute", 
         "chatApp.DataModel",
+        "chatApp.UserSession",
         "chatApp.UserList",
+        "chatApp.MessageSender",
         "chatApp.MessageList"
     ]);
 
